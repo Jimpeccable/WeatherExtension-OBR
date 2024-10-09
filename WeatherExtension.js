@@ -9,13 +9,19 @@ const WeatherExtension = () => {
   const [weather, setWeather] = useState('sunny');
   const [showOverlay, setShowOverlay] = useState(false);
 
+  // useEffect to handle OBR SDK readiness
   useEffect(() => {
     console.log('useEffect running');
+    
+    // Wait for the Owlbear Rodeo SDK to be ready
     OBR.onReady(() => {
       console.log('OBR ready');
       OBR.notification.show('Weather Extension loaded!');
+
+      // Optionally, trigger a re-render or set default state when OBR is ready
+      setWeather('sunny');  // Example: Setting the default weather after OBR is ready
     });
-  }, []);
+  }, []);  // Empty dependency array means this runs once after component mounts
 
   const handleWeatherChange = (event) => {
     const value = event.target.value;
