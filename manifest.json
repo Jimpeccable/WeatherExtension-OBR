@@ -3,12 +3,12 @@
   "description": "Adds weather effects to Owlbear Rodeo",
   "version": "1.0.0",
   "author": "James Coupe",
-  "icon": "/icon.svg",
+  "icon": "https://jimpeccable.github.io/WeatherExtension-OBR/icon.svg",
   "manifest_version": 1,
   "action": {
     "title": "Weather Extension",
-    "icon": "/toolbar-icon.svg",
-    "popover": "/index.html",
+    "icon": "https://jimpeccable.github.io/WeatherExtension-OBR/toolbar-icon.svg",
+    "popover": "https://jimpeccable.github.io/WeatherExtension-OBR/index.html",
     "height": 300,
     "width": 400
   }
