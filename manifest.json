@@ -8,7 +8,7 @@
   "action": {
     "title": "Weather Extension",
     "icon": "/icon.svg",
-    "popover": "/index.html",  // Ensure this points to your built HTML file
+    "popover": "/",
     "height": 300,
     "width": 400
   }
