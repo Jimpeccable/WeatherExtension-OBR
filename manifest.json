@@ -8,7 +8,7 @@
   "action": {
     "title": "Weather Extension",
     "icon": "/icon.svg",
-    "popover": "/index.html",
+    "popover": "https://Jimpeccable.github.io/WeatherExtension-OBR/index.html",  // Update this URL
     "height": 300,
     "width": 400
   }
