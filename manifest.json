@@ -7,8 +7,8 @@
   "manifest_version": 1,
   "action": {
     "title": "Weather Extension",
-    "icon": "/icon.svg",
-    "popover": "https://jimpeccable.github.io/WeatherExtension-OBR/index.html",
+    "icon": "/toolbar-icon.svg",
+    "popover": "/",
     "height": 300,
     "width": 400
   }
