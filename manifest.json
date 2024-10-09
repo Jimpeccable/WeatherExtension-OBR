@@ -1,14 +1,14 @@
 {
   "name": "Weather Extension",
   "description": "Adds weather effects to Owlbear Rodeo",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "author": "James Coupe",
   "icon": "/icon.svg",
-  "manifest_version": 1,
+  "manifest_version": 2, // or 3, depending on what is supported
   "action": {
     "title": "Weather Extension",
     "icon": "/icon.svg",
-    "popover": "/",
+    "popover": "/index.html", // Point to your HTML file
     "height": 300,
     "width": 400
   }
