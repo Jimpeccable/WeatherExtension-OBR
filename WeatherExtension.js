@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import OBR from '@owlbear-rodeo/sdk';
 import { Sun, Cloud, CloudRain, CloudSnow } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 const WeatherExtension = () => {
   const [weather, setWeather] = useState('sunny');
@@ -10,12 +8,12 @@ const WeatherExtension = () => {
 
   useEffect(() => {
     OBR.onReady(() => {
-      // Initialize the extension
       OBR.notification.show('Weather Extension loaded!');
     });
   }, []);
 
-  const handleWeatherChange = (value) => {
+  const handleWeatherChange = (event) => {
+    const value = event.target.value;
     setWeather(value);
     OBR.notification.show(`Weather changed to ${value}`);
   };
@@ -27,34 +25,29 @@ const WeatherExtension = () => {
 
   const getWeatherIcon = () => {
     switch (weather) {
-      case 'sunny': return <Sun className="text-yellow-500" />;
-      case 'cloudy': return <Cloud className="text-gray-500" />;
-      case 'rainy': return <CloudRain className="text-blue-500" />;
-      case 'snowy': return <CloudSnow className="text-blue-200" />;
+      case 'sunny': return <Sun color="yellow" />;
+      case 'cloudy': return <Cloud color="gray" />;
+      case 'rainy': return <CloudRain color="blue" />;
+      case 'snowy': return <CloudSnow color="lightblue" />;
       default: return null;
     }
   };
 
   return (
-    <div className="p-4 bg-white rounded-lg shadow-md">
-      <h2 className="text-xl font-bold mb-4">Weather Control</h2>
-      <div className="flex items-center space-x-2 mb-4">
-        <span className="text-lg">{getWeatherIcon()}</span>
-        <Select onValueChange={handleWeatherChange} defaultValue={weather}>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Select weather" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="sunny">Sunny</SelectItem>
-            <SelectItem value="cloudy">Cloudy</SelectItem>
-            <SelectItem value="rainy">Rainy</SelectItem>
-            <SelectItem value="snowy">Snowy</SelectItem>
-          </SelectContent>
-        </Select>
+    <div style={{ padding: '1rem', backgroundColor: 'white', borderRadius: '0.5rem', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+      <h2 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '1rem' }}>Weather Control</h2>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
+        <span style={{ fontSize: '1.125rem', marginRight: '0.5rem' }}>{getWeatherIcon()}</span>
+        <select onChange={handleWeatherChange} value={weather} style={{ padding: '0.5rem', borderRadius: '0.25rem', border: '1px solid #ccc' }}>
+          <option value="sunny">Sunny</option>
+          <option value="cloudy">Cloudy</option>
+          <option value="rainy">Rainy</option>
+          <option value="snowy">Snowy</option>
+        </select>
       </div>
-      <Button onClick={toggleOverlay}>
+      <button onClick={toggleOverlay} style={{ padding: '0.5rem 1rem', backgroundColor: '#4CAF50', color: 'white', border: 'none', borderRadius: '0.25rem', cursor: 'pointer' }}>
         {showOverlay ? 'Hide Overlay' : 'Show Overlay'}
-      </Button>
+      </button>
     </div>
   );
 };
