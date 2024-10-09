@@ -4,11 +4,11 @@
   "version": "1.0.0",
   "author": "James Coupe",
   "icon": "/icon.svg",
-  "manifest_version": 2,
+  "manifest_version": 1,
   "action": {
     "title": "Weather Extension",
     "icon": "/icon.svg",
-    "popover": "https://Jimpeccable.github.io/WeatherExtension-OBR/index.html",
+    "popover": "https://jimpeccable.github.io/WeatherExtension-OBR/index.html",
     "height": 300,
     "width": 400
   }
