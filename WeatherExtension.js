@@ -3,6 +3,8 @@ const { Sun, Cloud, CloudRain, CloudSnow } = lucide;
 
 console.log('WeatherExtension script loaded');
 
+import { Sun, Cloud, CloudRain, CloudSnow } from 'lucide-react';
+
 const WeatherExtension = () => {
   console.log('WeatherExtension component rendering');
 
