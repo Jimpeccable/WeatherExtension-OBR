@@ -1,28 +1,37 @@
 const { useState, useEffect } = React;
 const { Sun, Cloud, CloudRain, CloudSnow } = lucide;
 
+console.log('WeatherExtension script loaded');
+
 const WeatherExtension = () => {
+  console.log('WeatherExtension component rendering');
+
   const [weather, setWeather] = useState('sunny');
   const [showOverlay, setShowOverlay] = useState(false);
 
   useEffect(() => {
+    console.log('useEffect running');
     OBR.onReady(() => {
+      console.log('OBR ready');
       OBR.notification.show('Weather Extension loaded!');
     });
   }, []);
 
   const handleWeatherChange = (event) => {
     const value = event.target.value;
+    console.log('Weather changed to:', value);
     setWeather(value);
     OBR.notification.show(`Weather changed to ${value}`);
   };
 
   const toggleOverlay = () => {
+    console.log('Toggling overlay');
     setShowOverlay(!showOverlay);
     // Here you would implement the logic to show/hide the overlay on the map
   };
 
   const getWeatherIcon = () => {
+    console.log('Getting weather icon for:', weather);
     switch (weather) {
       case 'sunny': return <Sun color="yellow" />;
       case 'cloudy': return <Cloud color="gray" />;
@@ -31,6 +40,8 @@ const WeatherExtension = () => {
       default: return null;
     }
   };
+
+  console.log('Rendering WeatherExtension component');
 
   return (
     <div style={{ padding: '1rem', backgroundColor: 'white', borderRadius: '0.5rem', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
@@ -50,3 +61,5 @@ const WeatherExtension = () => {
     </div>
   );
 };
+
+console.log('WeatherExtension component defined');
