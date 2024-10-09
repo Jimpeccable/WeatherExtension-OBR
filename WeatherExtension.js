@@ -1,9 +1,7 @@
-const { useState, useEffect } = React;
-const { Sun, Cloud, CloudRain, CloudSnow } = lucide;
+import React, { useState, useEffect } from 'react';
+import { Sun, Cloud, CloudRain, CloudSnow } from 'lucide-react';
 
 console.log('WeatherExtension script loaded');
-
-import { Sun, Cloud, CloudRain, CloudSnow } from 'lucide-react';
 
 const WeatherExtension = () => {
   console.log('WeatherExtension component rendering');
@@ -29,7 +27,6 @@ const WeatherExtension = () => {
   const toggleOverlay = () => {
     console.log('Toggling overlay');
     setShowOverlay(!showOverlay);
-    // Here you would implement the logic to show/hide the overlay on the map
   };
 
   const getWeatherIcon = () => {
@@ -64,4 +61,4 @@ const WeatherExtension = () => {
   );
 };
 
-console.log('WeatherExtension component defined');
+export default WeatherExtension;
