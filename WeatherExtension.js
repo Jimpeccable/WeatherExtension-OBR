@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import OBR from '@owlbear-rodeo/sdk';
-import { Sun, Cloud, CloudRain, CloudSnow } from 'lucide-react';
+const { useState, useEffect } = React;
+const { Sun, Cloud, CloudRain, CloudSnow } = lucide;
 
 const WeatherExtension = () => {
   const [weather, setWeather] = useState('sunny');
@@ -51,5 +50,3 @@ const WeatherExtension = () => {
     </div>
   );
 };
-
-export default WeatherExtension;
