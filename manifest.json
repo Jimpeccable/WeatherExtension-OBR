@@ -1,15 +1,15 @@
 {
-    "name": "Weather Extension",
-    "description": "Adds weather effects to Owlbear Rodeo",
-    "version": "1.0.0",
-    "author": "James Coupe",
+  "name": "Weather Extension",
+  "description": "Adds weather effects to Owlbear Rodeo",
+  "version": "1.0.0",
+  "author": "James Coupe",
+  "icon": "/icon.svg",
+  "manifest_version": 1,
+  "action": {
+    "title": "Weather Extension",
     "icon": "/icon.svg",
-    "manifest_version": 1,
-    "action": {
-      "title": "Weather Extension",
-      "icon": "/icon.svg",
-      "popover": "/",
-      "height": 300,
-      "width": 400
-    }
+    "popover": "/index.html",  // Update to point to the correct HTML or JS file
+    "height": 300,
+    "width": 400
   }
+}
