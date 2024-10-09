@@ -6,23 +6,15 @@
     <title>Owlbear Weather Extension</title>
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/@owlbear-rodeo/sdk@1.3.0/dist/umd/index.js"></script>
+    <script src="https://unpkg.com/@owlbear-rodeo/sdk@1.3.0/dist/umd/index.js" crossorigin></script>
     <script src="https://unpkg.com/lucide-react@0.244.0/dist/umd/lucide-react.min.js" crossorigin></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
     <div id="root">Loading...</div>
-    <script type="text/babel" src="./WeatherExtension.js"></script>
     <script type="text/babel">
-        console.log('Script running');
-        try {
-            console.log('Attempting to render WeatherExtension');
-            ReactDOM.createRoot(document.getElementById('root')).render(<WeatherExtension />);
-            console.log('Render complete');
-        } catch (error) {
-            console.error('Error rendering WeatherExtension:', error);
-            document.getElementById('root').textContent = 'Error: ' + error.message;
-        }
+        const { createRoot } = ReactDOM;
+        const root = createRoot(document.getElementById('root'));
+        root.render(<WeatherExtension />);
     </script>
 </body>
 </html>
