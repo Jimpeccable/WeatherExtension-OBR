@@ -8,7 +8,7 @@
   "action": {
     "title": "Weather Extension",
     "icon": "/toolbar-icon.svg",
-    "popover": "/",
+    "popover": "/index.html",
     "height": 300,
     "width": 400
   }
