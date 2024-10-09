@@ -11,10 +11,18 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
-    <div id="root"></div>
+    <div id="root">Loading...</div>
     <script type="text/babel" src="./WeatherExtension.js"></script>
     <script type="text/babel">
-        ReactDOM.createRoot(document.getElementById('root')).render(<WeatherExtension />);
+        console.log('Script running');
+        try {
+            console.log('Attempting to render WeatherExtension');
+            ReactDOM.createRoot(document.getElementById('root')).render(<WeatherExtension />);
+            console.log('Render complete');
+        } catch (error) {
+            console.error('Error rendering WeatherExtension:', error);
+            document.getElementById('root').textContent = 'Error: ' + error.message;
+        }
     </script>
 </body>
 </html>
